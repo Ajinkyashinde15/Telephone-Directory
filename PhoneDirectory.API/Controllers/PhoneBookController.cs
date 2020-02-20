@@ -18,7 +18,7 @@ namespace PhoneDirectory.API.Controllers
             _context=aPIContext;
         }
 
-         // GET api/phonebook
+        // GET api/phonebook
         [HttpGet]
         public async Task<ActionResult<IEnumerable<PhoneBook>>> GetPhoneBookRecords()
         {
