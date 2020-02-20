@@ -13,12 +13,12 @@
           <div class="td">Address </div>
           <div class="td">PhoneNo </div>
           <div class="td">Email </div>
-          <div class="td">Phone Book Catagory</div>
-                
+          <div class="td">Catagory</div>
+          <div class="td">Action</div>                
       </div>
   </div>
   <div class="tbody">
-      <form class="tr" [formGroup]="fg" *ngFor="let fg of phoneDirectoryForms.controls">        
+      <form class="tr" [formGroup]="fg" *ngFor="let fg of phoneDirectoryForms.controls" (submit)="recordSubmit(fg)">        
           <div class="td">
               <input class="form-control" formControlName="firstName">
           </div> 
@@ -36,10 +36,13 @@
           </div>   
           <div class="td">
             <select class="form-control" formControlName="pbcId">
-              <option value="0">Select</option>>
+              <option value="0">Select</option>
               <option *ngFor="let item of phoneBookCat" value="{{item.pbcId}}">{{item.name}}</option>
             </select>
-          </div>     
+          </div>    
+          <div class="td">
+            <button type="submit" class="btn btn-success" [disabled]="fg.invalid"><i class="far fa-save fa-lg"></i>  Submit</button>
+          </div> 
       </form>
   </div>
 </div>
