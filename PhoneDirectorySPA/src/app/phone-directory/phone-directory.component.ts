@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormArray } from '@angular/forms';
+import { FormBuilder, FormArray, Validators } from '@angular/forms';
 import { PhoneService } from '../shared/phone.service';
 
 @Component({
@@ -23,12 +23,12 @@ export class PhoneDirectoryComponent implements OnInit {
   addPhoneDirectoryForm(){
     this.phoneDirectoryForms.push(this.fb.group({
       phoneBookId : [0],
-      firstName : [''],
-      lastName : [''],
-      address : [''],
-      phoneNo : [''],
-      email : [''],
-      pbcId : [0]   
+      firstName : ['',Validators.required ],
+      lastName : ['',Validators.required ],
+      address : ['',Validators.required ],
+      phoneNo : ['',Validators.required ],
+      email : ['',Validators.required ],
+      pbcId : [0,Validators.min(1)]   
     }));
   }
 }

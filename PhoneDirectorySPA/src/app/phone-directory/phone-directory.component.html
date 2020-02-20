@@ -36,6 +36,7 @@
           </div>   
           <div class="td">
             <select class="form-control" formControlName="pbcId">
+              <option value="0">Select</option>>
               <option *ngFor="let item of phoneBookCat" value="{{item.pbcId}}">{{item.name}}</option>
             </select>
           </div>     
