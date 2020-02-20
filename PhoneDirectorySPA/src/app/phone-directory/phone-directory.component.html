@@ -1,0 +1,43 @@
+<blockquote class="blockquote ml-5">
+  <h2>My Phone Directory</h2>
+  <footer class="blockquote-footer">
+      Using inline table editing with <i>Angular 8</i> and <i>Asp.Net Core</i>
+  </footer>
+</blockquote>
+
+<div class="grid-table">
+  <div class="thead">
+      <div class="tr">
+          <div class="td">PhoneBookId </div>
+          <div class="td">FirstName </div>
+          <div class="td">LastName </div>
+          <div class="td">Address </div>
+          <div class="td">PhoneNo </div>
+          <div class="td">Email </div>
+          <div class="td">Phone Book Catagory</div>
+                
+      </div>
+  </div>
+  <div class="tbody">
+      <form class="tr" [formGroup]="fg" *ngFor="let fg of phoneDirectoryForms.controls">        
+          <div class="td">
+              <input class="form-control" formControlName="firstName">
+          </div> 
+          <div class="td">
+            <input class="form-control" formControlName="lastName">
+          </div>     
+          <div class="td">
+            <input class="form-control" formControlName="address">
+          </div> 
+          <div class="td">
+            <input class="form-control" formControlName="phoneNo">
+          </div>   
+          <div class="td">
+            <input class="form-control" formControlName="email">
+          </div>   
+          <div class="td">
+            <input class="form-control" formControlName="pbcId">
+          </div>     
+      </form>
+  </div>
+</div>
