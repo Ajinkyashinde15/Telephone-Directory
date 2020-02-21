@@ -24,7 +24,9 @@ export class PhoneDirectoryComponent implements OnInit {
   recordSubmit(fg:FormGroup)
   {
     this.phoneBookService.postPhoneBookRecord(fg.value).subscribe(
-      (res : any) => {}
+      (res : any) => {
+        fg.patchValue({phoneBookId:res.phoneBookId});
+      }
     );
   }
 
