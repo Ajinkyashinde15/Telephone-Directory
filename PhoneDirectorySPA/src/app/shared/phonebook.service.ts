@@ -24,4 +24,9 @@ export class PhonebookService {
   {
     return this.http.put(environment.baseUrl+'phonebook/'+formData.phoneBookId,formData);
   }
+
+  deletePhoneBookRecord(phoneBookId)
+  {
+    return this.http.delete(environment.baseUrl+'phonebook/'+phoneBookId);
+  }
 }
